@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  quasar-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9000:80"
+    volumes:
+      - ./front:/app
+    depends_on:
+      - quasar-dev
+    networks:
+      - frontend-network
+
+  quasar-dev:
+    image: node:20-alpine
+    volumes:
+      - ./front:/app
+    working_dir: /app
+    command: ["/bin/sh", "-c", "while true; do sleep 3600; done"]
+    networks:
+      - frontend-network
+
+networks:
+  frontend-network:
