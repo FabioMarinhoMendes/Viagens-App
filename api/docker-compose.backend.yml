@@ -1,0 +1,40 @@
+services:
+  app:
+    image: systemsdk/docker-apache-php-laravel:latest # Ou uma versão específica (ex: systemsdk/docker-apache-php-laravel:8.1)
+    ports:
+      - "8000:80" # Mapeia a porta 8000 do host para a porta 80 dentro do container (Apache)
+    volumes:
+      - ./api:/var/www/html # Monta o código da sua aplicação
+    depends_on:
+      - db
+    environment:
+      - APP_ENV=development
+      - APP_DEBUG=true # Ou false em produção
+      - DB_CONNECTION=mysql # Ou o seu banco de dados
+      - DB_HOST=db # Nome do serviço do banco de dados
+      - DB_PORT=3306
+      - DB_DATABASE=projeto_viagem
+      - DB_USERNAME=docker
+      - DB_PASSWORD=docker
+    networks:
+      - app-network
+
+  db:
+    image: mysql:8.3.0 # Ou a versão do MySQL que você preferir
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_DATABASE: projeto_viagem
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    ports:
+      - "3306:3306" # Exponha apenas se precisar acessar o banco de dados diretamente do host
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
