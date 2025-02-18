@@ -87,6 +87,12 @@ php artisan serve
 ```bash
 cd api
 ```
+
+### Para rodar os testes no Docker use o comando a seguir antes de rodar os comandos dos testes:
+```bash
+docker-compose -f docker-compose.backend.yml exec app bash
+```
+
 ### Execute o comando
 ```bash
 php artisan test
