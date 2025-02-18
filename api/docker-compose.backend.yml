@@ -15,11 +15,11 @@ services:
     depends_on:  # Garante que o banco de dados esteja rodando antes do app
       - database
     environment: # Variáveis de ambiente para o Laravel
-      - APP_KEY=base64:$(openssl rand -base64 32) # Gere uma nova chave
-      - DB_HOST=database # Nome do serviço do banco de dados
-      - DB_DATABASE=projeto_viagem # Substitua pelo nome do seu banco
-      - DB_USERNAME=docker # Substitua pelo usuário
-      - DB_PASSWORD=docker # Substitua pela senha
+      - APP_KEY=base64:$(openssl rand -base64 32) #
+      - DB_HOST=database # 
+      - DB_DATABASE=projeto_viagem # 
+      - DB_USERNAME=docker # 
+      - DB_PASSWORD=docker #
 
   nginx:
     image: nginx:alpine
@@ -35,7 +35,7 @@ services:
       - app
 
   database:  # Serviço para o banco de dados
-    image: mysql:8.3.0 # Ou a versão do MySQL que você preferir
+    image: mysql:8.3.0 # 
     container_name: database
     ports:
       - "3306:3306" # Apenas se precisar acessar o banco diretamente do host
