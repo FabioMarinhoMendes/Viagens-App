@@ -54,9 +54,10 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=projeto_viagem
-DB_USERNAME=
-DB_PASSWORD=
+DB_USERNAME=docker
+DB_PASSWORD=docker
 
+// use algum servidor de e-mail dr sua preferencia para testar o envio de email sempre que alterar o status do usuário 
 MAIL_MAILER=smtp
 MAIL_HOST=
 MAIL_PORT=
