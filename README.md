@@ -22,6 +22,11 @@ docker-compose -f docker-compose.frontend.yml up -d
 ```bash
 docker-compose -f docker-compose.backend.yml up -d
 ```
+### Depois rode as migrates, para criar as tabelas no banco de dados
+
+```bash
+docker-compose -f docker-compose.backend.yml exec app php artisan migrate
+```
 
 #### Se não quiser usar o Docker ou em caso de erro, siga os passos:
 
