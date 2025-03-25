@@ -26,7 +26,7 @@ class PedidoAtualizado extends Mailable
 
     public function build()
     {
-        return $this->from('fabiomuonlinec@gmail.com', 'Onfly')
+        return $this->from('fabioteste@gmail.com', 'Viagem')
                     ->subject('Atualização do status do seu pedido')
                     ->html($this->mensagem); 
     }

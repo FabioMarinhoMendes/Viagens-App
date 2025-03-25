@@ -14,7 +14,7 @@ class PedidoObserver
     {
         if ($pedido->status == 'aprovado' || $pedido->status == 'cancelado') {          
             Mail::raw('O status do seu pedido foi atualizado para: '.$pedido->status, function ($message) {
-                $message->to('fabiomuonlinec@gmail.com')->subject('Status do pedido Onfly');
+                $message->to('fabioteste@gmail.com')->subject('Status do pedido de Viagem');
             });
         }
     }
