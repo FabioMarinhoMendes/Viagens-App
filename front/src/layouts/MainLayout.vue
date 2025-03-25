@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Onfly
+          Viagem
         </q-toolbar-title>
 
         <div>
@@ -27,7 +27,7 @@
     >
       <q-list bordered class="rounded-borders">
         <q-item-label header class="text-center">
-            <h1 style="margin: 5px 0; font-size: 26px; line-height: 2rem;">Onfly</h1>
+            <h1 style="margin: 5px 0; font-size: 26px; line-height: 2rem;">Viagem</h1>
         </q-item-label>
 
         <q-item clickable to="/" @click="leftDrawerOpen = !leftDrawerOpen">

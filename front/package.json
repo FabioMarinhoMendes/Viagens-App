@@ -2,7 +2,7 @@
   "name": "viagens-front",
   "version": "0.0.1",
   "description": "A Quasar Project",
-  "productName": "Onfly App",
+  "productName": "Viagem App",
   "author": "Fabio Siqueira",
   "private": true,
   "type": "module",
